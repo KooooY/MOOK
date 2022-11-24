@@ -1,0 +1,28 @@
+#content {
+  text-align: start;
+  #movie_title {
+    font-size: 20px;
+    font: bold;
+  }
+  #movie_overview {
+    display:block;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    font-size: 12px;
+    word-break: keep-all;
+  }
+  #likeheart{
+    display: flex;
+    align-items: center;
+    .heartimg{
+      width: 24px;
+      height: 24px;
+    }
+    span{
+      top:0;
+    }
+  }
+}

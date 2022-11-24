@@ -1,0 +1,58 @@
+#profilecontainer{
+  width: 70%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 100px;
+  #profileupper{
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+  
+    #personalinfo{
+      width: 200px;
+      height: 100%;
+      margin-right: 15px;
+      p{
+      bottom: 0;
+      }
+      #followcnt{
+        margin-top: 100px;
+        p{
+          margin-bottom:5px ;
+        }
+      }
+    }
+
+    #personalcomment{
+      width: 800px;
+      overflow:scroll;
+      margin-bottom: 20px;
+    }
+    #personalcomment::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera*/
+  }
+  }
+
+  #personalarticle{
+    display: flex;
+    flex-direction: row;
+    .empty{
+      width: 200px;
+    }
+    #reviews{
+      width: 800px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      div{
+        height: 240px;
+        #reviewcards{
+          height: 100%;
+        }
+      }
+    }
+  }
+}

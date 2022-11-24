@@ -1,92 +1,97 @@
-# final-pjt
+# Movie Network, MOOK!
 
+## 목차
+1. Description
+2. Get Started
+3. OverView
+4. Development
+5. Schedule
+6. Languages and Tools
+7. ERD
+8. Members
+9. RetroSpective
 
+<hr>
 
-## Getting started
+### Description
+<br>
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+나와 같은 취향을 가진 무비메이트를 찾는 Movie Network, MOOK!
+- 영화 감상 공유 SNS 컨셉으로, 내 취향과 감상을 전시하고 나와 유사한 감성의 유저를 찾아 ‘무비메이트’를 만들고 교류하는 것이 목적
+- 가입 시 등록한 선호 장르 기반으로 영화를 추천하고, 해당 영화의 리뷰를 통해 나와 유사한 취향과 가치관을 가진 유저를 찾을 수 있는 서비스
+- 팔로우, 댓글, 방명록 등 유저 간 교류할 수 있는 다양한 시스템
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+<hr>
 
-## Add your files
+### Get Start
+<br>
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
+- client
 ```
-cd existing_repo
-git remote add origin https://lab.ssafy.com/la_fille_/final-pjt.git
-git branch -M master
-git push -uf origin master
+$ git clone 깃주소
+$ cd final-pjt-front
+$ npm i
+$ npm run serve
 ```
+<br>
 
-## Integrate with your tools
+- server
+```
+$ git clone 깃주소
+$ cd final-pjt-back
+$ python -m venv venv
+$ source venv/Scripts/activate
+$ pip install -r requirements.txt
 
-- [ ] [Set up project integrations](https://lab.ssafy.com/la_fille_/final-pjt/-/settings/integrations)
+$ python manage.py makemigrations
+$ python manage.py miragte
 
-## Collaborate with your team
+# tmdb 기반 영화 데이터 추가
+$ python manage.py loaddata genres.json movies.json
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+# 서버 실행
+$ python manage.py runserver
+```
+<hr>
 
-## Test and Deploy
+### Overview
+1. 가입하지 않아도 제공되는 랜덤추천기능  
+(메인이미지삽입)
+- 가입하지 않아도 서비스를 일부 체험해 볼 수 있도록 구성
+- 추천영화는 볼 수 있되 리뷰 열람 등의 서비스는 제한하여 가입을 유도
 
-Use the built-in continuous integration in GitLab.
+2. 로그인/회원가입  
+(이미지삽입)
+- 로그인이 필요한 서비스에 접속 시도 시 바로 로그인 페이지로 리다이렉트
+- 미가입회원도 바로 가입할 수 있도록 로그인 하단에 가입페이지로 이동 가능한 버튼 삽입
+- 회원가입 및 로그인 시 잘못된 정보를 기입하면 알람창을 띄워 유저가 인식할 수 있도록 구성
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+3. 무VTI (선호장르조사)  
+(이미지 삽입)
+- 유저의 선호 장르를 조사하여 적절한 추천 알고리즘을 구축함과 동시에, 개인화 전략을 통해 서비스의 SNS 성격 강화
 
-***
+4. 메인페이지  
+(로그인 후 메인페이지)
+- 회원가입 및 로그인 시, 유저가 등록했던 무VTI를 기반으로 한 영화 추천 서비스 제공
 
-# Editing this README
+5. 영화 세부 페이지  
+(상세페이지이미지)
+- 영화에 대한 간략한 정보와 함께, 리뷰 작성 기능 및 다른 유저들이 작성한 리뷰 목록 제공
+- 좋아요 기능을 통한 간략한 선호도 표기
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+6. 리뷰 작성페이지
+(이미지)
+- 영화 상세페이지에서 즉시 해당 영화에 대한 리뷰 작성 가능
+- 제목, 내용의 간결한 구성
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+7. 리뷰 상세페이지 
+(이미지)
+- 리뷰 내용과 함께 영화 제목 및 포스터, 작성자 정보 제공
+- 리뷰작성자는 리뷰 수정, 삭제 가능
+- 리뷰에 대한 댓글 작성 및 삭제 기능
+- 리뷰가 마음에 들 경우, 작성자의 프로필 페이지로 즉시 이동할 수 있도록 구성
 
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+8. 유저프로필페이지(이미지)
+- 해당 유저가 작성한 모든 리뷰 리스트 제공 및 열람 가능
+- 접속 유저가 본인인지 타인인지에 따라 안내문구 다르게 출력
+- 적극적인 교류를 위한 팔로우, 방명록 구현을 통해 SNS적 기능 강화

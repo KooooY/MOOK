@@ -1,0 +1,52 @@
+#reviewcontainer{
+  width: 200px;
+  height: 150px;
+  outline: 1.5px solid #7e7361;
+  margin-top: 10px;
+  padding: 10px;
+  text-decoration: none !important;
+  word-break: keep-all;
+
+  &:a
+  { text-decoration: none; color: inherit; 
+
+  :hover{
+    text-decoration: none; color: inherit; 
+  }
+  :visited{
+    text-decoration: none; color: inherit; 
+  }
+  :focus{
+    text-decoration: none; color: inherit; 
+  }
+  :active{
+    text-decoration: none; color: inherit; 
+  }
+}
+  
+  #reviewbox{
+    #reviewboxtitle{
+      font-weight: 500;
+      color: #7e7361;
+      text-decoration: none;
+      margin-bottom: 24px;
+      font-size: 20px;
+    }
+
+    #reviewboxcontent{
+      font-weight: 300;
+      color: #7e7361;
+      text-decoration: none;
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+  }
+}
+
+#reviewcontainer:hover {
+  width: 200px;
+  outline: 2px solid #7e7361;
+  margin-top: 10px;
+  padding: 10px;
+  text-decoration: none !important;
+}

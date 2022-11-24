@@ -1,0 +1,35 @@
+#mvtitle{
+  font-size: 20px;
+  font-weight: 400;
+}
+
+#rvtitle{
+  font-size: 24px;
+  font-weight: 500;
+}
+
+#wrt{
+  display: flex;
+  align-self: center;
+  .wrtcon{
+    margin: 0 20px 0 0;
+    padding: 0;
+  }
+}
+
+#rvcontent{
+  font-size: 16px;
+  margin-top: 36px;
+  margin-bottom: 20px;
+}
+
+#udbutton{
+  display: flex;
+  justify-content: end;
+  button{
+  outline: 1px solid #7e7361;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  padding: 3px
+  }
+}
